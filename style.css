@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #141e30, #243b55);
+
+    color: white;
+}
+
+/* Main Game Container */
+#gameContainer {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+h1 {
+    font-size: 42px;
+
+    margin-bottom: 25px;
+}
+
+/* Game Board */
+#cellContainer {
+    width: min(90vw, 360px);
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+/* Cells */
+.cell {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 12px;
+
+    font-size: clamp(40px, 12vw, 70px);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+/* Cell Hover */
+.cell:hover {
+    background: rgba(255, 255, 255, 0.2);
+
+    transform: scale(1.03);
+}
+
+/* Status */
+#statusText {
+    min-height: 35px;
+
+    margin-bottom: 20px;
+
+    font-size: clamp(20px, 5vw, 28px);
+}
+
+/* Restart Button */
+#restratBtn {
+    padding: 12px 30px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #141e30;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#restratBtn:hover {
+    background: #e5e5e5;
+
+    transform: translateY(-2px);
+}
+
+#restratBtn:active {
+    transform: scale(0.96);
+}
+
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    #gameContainer {
+        padding: 25px 15px;
+
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 34px;
+
+        margin-bottom: 20px;
+    }
+
+    #cellContainer {
+        width: min(90vw, 330px);
+
+        gap: 6px;
+    }
+
+    .cell {
+        border-radius: 9px;
+
+        font-size: clamp(35px, 15vw, 60px);
+    }
+
+    #statusText {
+        font-size: 22px;
+
+        margin-bottom: 18px;
+    }
+
+    #restratBtn {
+        padding: 11px 25px;
+
+        font-size: 17px;
+    }
+}
+
+
+
+/* Small Mobile */
+
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 10px;
+    }
+
+    #gameContainer {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 29px;
+
+        margin-bottom: 18px;
+    }
+
+    #cellContainer {
+        width: 90vw;
+
+        gap: 5px;
+    }
+
+    .cell {
+        border-radius: 7px;
+
+        font-size: 45px;
+    }
+
+    #statusText {
+        font-size: 20px;
+    }
+
+    #restratBtn {
+        padding: 10px 22px;
+
+        font-size: 16px;
+    }
+}
